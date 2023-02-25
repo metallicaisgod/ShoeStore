@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentAddShoeBinding
 import com.udacity.shoestore.databinding.FragmentTutorialBinding
 
 class TutorialFragment : Fragment() {
@@ -18,12 +19,7 @@ class TutorialFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_tutorial,
-            container,
-            false
-        )
+        binding = FragmentTutorialBinding.inflate(inflater, container, false)
         binding.buttonAccept.setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 TutorialFragmentDirections.actionTutorialFragmentToShoeListFragment()

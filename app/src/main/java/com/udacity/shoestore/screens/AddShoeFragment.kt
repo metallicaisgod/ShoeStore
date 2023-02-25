@@ -41,12 +41,7 @@ class AddShoeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
-            layoutInflater,
-            R.layout.fragment_add_shoe,
-            container,
-            false
-        )
+        binding = FragmentAddShoeBinding.inflate(inflater, container, false)
         navController = findNavController()
         fragmentViewModel = ViewModelProvider(this)[AddShoeViewModel::class.java]
         fragmentViewModel.dataToSave.observe(viewLifecycleOwner) {

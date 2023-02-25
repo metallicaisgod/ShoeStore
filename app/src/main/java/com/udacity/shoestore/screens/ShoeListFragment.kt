@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.FragmentAddShoeBinding
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ItemShoeBinding
 import com.udacity.shoestore.viewmodels.MainViewModel
@@ -21,12 +22,7 @@ class ShoeListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = DataBindingUtil.inflate(
-            inflater,
-            R.layout.fragment_shoe_list,
-            container,
-            false
-        )
+        binding = FragmentShoeListBinding.inflate(inflater, container, false)
         binding.floatingActionButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 ShoeListFragmentDirections.actionShoeListFragmentToAddShoeFragment()
